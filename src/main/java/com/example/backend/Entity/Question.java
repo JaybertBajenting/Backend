@@ -24,9 +24,9 @@ public class Question {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "question_id")
-    private UUID id;
+    private Long id;
 
 
     @Column(name = "question")
@@ -50,10 +50,6 @@ public class Question {
 
     @Column(name = "tags",columnDefinition = "TEXT",length = 10000)
     private String tagsJson;
-
-
-
-
 
 
     @Column(name = "imageUrl")
