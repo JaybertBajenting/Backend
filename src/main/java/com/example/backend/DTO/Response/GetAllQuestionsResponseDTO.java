@@ -1,16 +1,18 @@
-package com.example.backend.DTO.Request;
+package com.example.backend.DTO.Response;
 
 
 import com.example.backend.Classes.Steps;
 import com.example.backend.Enum.Difficulty;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class AddQuestionRequestDTO {
+@Builder
+public class GetAllQuestionsResponseDTO {
 
-
+    private Long id;
 
     private String question;
 
@@ -32,8 +34,5 @@ public class AddQuestionRequestDTO {
     private Difficulty difficulty;
 
     private String imageUrl;
-
-
-
 
 }

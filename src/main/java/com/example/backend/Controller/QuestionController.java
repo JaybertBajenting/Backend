@@ -18,20 +18,36 @@ public class QuestionController {
 
 
 
-
-
     @PostMapping(value = "/addQuestion/")
     public ResponseEntity<?> addQuestion( @RequestBody AddQuestionRequestDTO requestDTO){
         questionService.addQuestion(requestDTO);
         return ResponseEntity.ok("Added");
     }
 
-//    @PostMapping(value = "/addQuestion/", consumes = {"multipart/form-data"})
-//    public ResponseEntity<?> addQuestion(
-//            @RequestParam(name = "imageUrl") MultipartFile multipartFile,
-//            @RequestPart(name = "requestDTO")AddQuestionRequestDTO requestDTO) {
-//        questionService.addQuestion(multipartFile, requestDTO);
-//        return ResponseEntity.ok("Added");
-//    }
+
+
+    @GetMapping(value = "/getAllQuestion")
+    public ResponseEntity<?> getQuestion(){
+        return ResponseEntity.ok(questionService.getAllQuestions());
+    }
+
+    @GetMapping(value = "/getQuestionById/{id}")
+    public ResponseEntity<?> getQuestionById(@PathVariable Long id){
+        try{
+            return ResponseEntity.ok(questionService.getQuestionById(id));
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @DeleteMapping(value = "/deleteQuestionById/{id}")
+    public ResponseEntity<?> deleteQuestionById(@PathVariable Long id){
+        try{
+            questionService.deleteQuestionById(id);
+            return ResponseEntity.ok("Deleted");
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 
 }
