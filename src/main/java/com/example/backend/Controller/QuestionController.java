@@ -63,6 +63,8 @@ public class QuestionController {
             return ResponseEntity.ok(questionService.updateQuestion(id,requestDTO));
         }catch (EntityNotFoundException e){
             return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

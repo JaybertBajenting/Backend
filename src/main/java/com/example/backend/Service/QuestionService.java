@@ -118,9 +118,9 @@ public class QuestionService {
     }
 
 
-    public GetQuestionsResponseDTO updateQuestion(Long questionId,QuestionRequestDTO updatedQuestion){
+    public GetQuestionsResponseDTO updateQuestion(Long questionId,QuestionRequestDTO updatedQuestion) throws IOException {
             Question question = getQuestionById(questionId);
-
+            MultipartFile file = updatedQuestion.getImage();
             if(updatedQuestion.getQuestion() != null){
                 question.setQuestion(updatedQuestion.getQuestion());
             }
@@ -143,10 +143,14 @@ public class QuestionService {
                 question.setDifficulty(updatedQuestion.getDifficulty());
             }
             if(updatedQuestion.getImageUrl() != null){
-                question.setImageUrl(updatedQuestion.getImageUrl());
+                File convFile = new File(file.getOriginalFilename());
+                try (FileOutputStream fos = new FileOutputStream(convFile)) {
+                    fos.write(file.getBytes());
+                }
+                spacesService.uploadFile(file.getOriginalFilename(), convFile);
+                String fileUrl = amazonS3.getUrl(bucketName,file.getOriginalFilename()).toString();
+                question.setImageUrl(fileUrl);
             }
-
-
 
 
             questionRepository.save(question);
