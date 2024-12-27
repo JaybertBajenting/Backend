@@ -1,18 +1,17 @@
-package com.example.backend.DTO.Response;
+package com.example.backend.DTO.Request;
 
 
 import com.example.backend.Classes.Steps;
 import com.example.backend.Enum.Difficulty;
-import lombok.Builder;
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
 @Data
-@Builder
-public class GetAllQuestionsResponseDTO {
+public class QuestionRequestDTO {
 
-    private Long id;
+
 
     private String question;
 
@@ -34,5 +33,9 @@ public class GetAllQuestionsResponseDTO {
     private Difficulty difficulty;
 
     private String imageUrl;
+
+
+    MultipartFile image;
+
 
 }

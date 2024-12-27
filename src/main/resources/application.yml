@@ -2,6 +2,11 @@ spring:
   application:
     name: backend
 
+#  datasource:
+#    url: ${dbProdUrl}
+#    username: ${dbProdUsername}
+#    password: ${dbProdPassword}
+#    driver-class-name: org.postgresql.Driver
   datasource:
     url: ${dbUrl}
     username: ${dbUsername}
@@ -18,3 +23,12 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
 
+
+
+
+
+  digitalocean:
+    secretKey: ${secretKey}
+    accessKey: ${accessKey}
+    region: ${region}
+    bucketName: ${bucketName}

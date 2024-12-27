@@ -41,7 +41,6 @@ public class Question {
 
 
 
-
     @Column(name = "options",columnDefinition = "TEXT",length = 10000)
     private String optionsJson;
 
@@ -60,6 +59,8 @@ public class Question {
 
     @Enumerated(EnumType.STRING)
     private Difficulty difficulty;
+
+
 
 
 
