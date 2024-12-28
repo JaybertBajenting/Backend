@@ -10,14 +10,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class Steps {
 
 
     private String title;
     private String result;
     private String imageUrl;
-
-
 
 
 }

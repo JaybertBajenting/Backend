@@ -25,7 +25,6 @@ public class DigitalOceanService {
     private String bucketName;
 
 
-
     public void uploadFile(String key, File file){
             amazonS3.putObject(new PutObjectRequest(bucketName,key,file).withCannedAcl(CannedAccessControlList.PublicRead));
     }

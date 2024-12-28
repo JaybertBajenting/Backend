@@ -22,7 +22,6 @@ public class QuestionController {
 
 
 
-
     @PostMapping(value = "/addQuestion/")
     public ResponseEntity<?> addQuestion( @ModelAttribute QuestionRequestDTO requestDTO) throws IOException {
         questionService.addQuestion(requestDTO);
@@ -34,8 +33,6 @@ public class QuestionController {
     public ResponseEntity<?> getQuestion(){
         return ResponseEntity.ok(questionService.getAllQuestions());
     }
-
-
 
 
 
