@@ -136,9 +136,12 @@ This repository contains a backend API for managing questions. The API supports 
 
 ---
 
+
+
+
 ## Deployment
 If deployed, include the live URL here:
-- **Live Demo**: ""
+- **Live Demo**: "https://hammerhead-app-cnoce.ondigitalocean.app"
 ---
 
 ## License
@@ -146,5 +149,5 @@ This project is licensed under the MIT License. See `LICENSE` for more details.
 
 ---
 
-For further queries, contact [your_email@example.com].
+For further queries, contact [jaybertbajenting99@gmail.com].
 
