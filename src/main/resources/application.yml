@@ -2,10 +2,11 @@ spring:
   application:
     name: backend
 
+
   datasource:
-    url: jdbc:postgresql://dpg-ctkgl8rqf0us739ht1jg-a.singapore-postgres.render.com/backend_yy6c
-    username: backend_yy6c_user
-    password: ovrbmTBXAOOSacr4UeFAFCS8opvqOHLH
+    url: ${dbProdUrl}
+    username: ${dbProdUsername}
+    password: ${dbProdPassword}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -19,14 +20,6 @@ spring:
       max-request-size: 10MB
 
 
-
-#
-#
-#  digitalocean:
-#    secretKey: bmCaPrgQlkNELmntCyyJepJOMlk1DmGqKWiXSeJVDcA
-#    accessKey: DO00HWMP3UWU27E36KPC
-#    region: sgp1.digitaloceanspaces.com
-#    bucketName: smartbackend
 
 
 
